@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
+ 
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<title>522 Share Data MongoDB</title> 
+<link href="css/main.css" rel="stylesheet" />
+<link rel="shortcut icon"   href="/favicon.ico"/>
+ 
+
+<!-- Notify CSS for nrzLightify i.e. only need bootstrap-notify for its CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.2.0/css/bootstrap-notify.css	" rel="stylesheet">
+ <link rel="stylesheet" href="/node_modules/angular-cookie-law/dist/angular-cookie-law.min.css">
+ 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">	
+ 
+
+</head>
+
+<body ng-app="angularnodeApp" > 
+ 
+ 
+ 	<cookie-law-banner message="We use cookies to support some features!" policy-url="https://cookiesandyou.com/" 
+                    	policy-button="true"  
+						policy-text="Explain Cookies" 
+						decline-button="true"
+						decline-text="I am rejecting cookies"
+						>			
+	</cookie-law-banner>
+ 
+	<cookie-law-wait>
+	
+	
+
+	
+	
+	
+	
+ <div class="row">
+   <!-- HEADER AND NAVBAR -->
+  <header>
+   <nav class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+    <div class="navbar-header">
+     <a class="navbar-brand" href="#home">Share Data MongoDB</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+	<li><a href="#shares"><i>Shares</i></a></li>
+	 	
+    </ul>		 
+   </div>
+   </nav>		
+  </header>
+ </div>
+
+ 	<div ng-view class="viewContent">
+	</div>	
+			
+			
+	</cookie-law-wait>
+ 
+	<div nrz-lightify-messages position="top-right"></div>
+ 
+
+ 
+			 
+<div nrz-lightify-messages position="top-right"></div>	 
+</body>
+<!-- cdn(s) etc. -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>	
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  
+	 
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js" ></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.js" ></script>	
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-resource.js" ></script>	
+
+<script type="text/javascript" src="/js_thirdparty/notify/bootstrap-notify.js"></script> 	 	
+<script type="text/javascript" src="/js_thirdparty/notify/angular-lightify.js"></script>  
+ 
+<!-- locally stored scripts on the server -->
+
+<script src="/node_modules/angular-cookie-law/dist/angular-cookie-law.min.js"></script>  
+ 
+<script type="text/javascript" src="js/app.js"> </script>                        <!-- must come before all the controllers etc -->
+<script type="text/javascript" src="js/controllers/shares.js"> </script> 
+<script type="text/javascript" src="js/services/srvShares.js"> </script> 
+ 
+</html>
+ 

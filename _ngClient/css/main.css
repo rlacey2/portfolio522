@@ -1,0 +1,107 @@
+ 
+html {
+ overflow-y: scroll; /* prevents a scrolling jump */
+}
+ 
+/* prevent header covering body */
+body { 
+    padding-top: 75px; 
+}
+
+.fixed-nav-two /* across the top, and below the nav bar, view specific content*/
+{
+ 
+  background-color:#ddd;
+  z-index : 9999;
+  position: fixed;
+ 
+  width: 84%;
+  right:0;
+  left:0;
+  height: 40px;
+  margin:auto;
+ 
+  top: 51px; /* there is another header of 65 */
+ /* margin-left: -100px; /*half the width*/
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px; 
+}
+
+.viewContent { /* below navbar + fixed fixedContainer */
+  position: relative;
+  top: 15px;
+  width: 84%;
+  right:0;
+  left:0;
+  margin:auto;
+}
+ 
+ 
+.top-buffer { margin-top:20px; } 
+.item:hover { color:blue;
+			  background-color : yellow;}
+ 
+/* bootstrap-notify */
+ 
+ /* Start - bootstrap-notify.css */
+.notifications {
+  position: fixed;
+  z-index: 9999;
+}
+
+/* Positioning */ 
+.notifications.top-right {
+  right: 10px;
+  top: 25px;
+}
+
+.notifications.top-left {
+  left: 10px;
+  top: 25px;
+}
+
+.notifications.bottom-left {
+  left: 10px;
+  bottom: 25px;
+}
+
+.notifications.bottom-right {
+  right: 10px;
+  bottom: 25px;
+}
+
+/* Notification Element */
+.notifications > div {
+  position: relative;
+  margin: 5px 0;
+}
+/* End - bootstrap-notify.css */
+.nrz-layer {
+    padding: 15px 15px 15px;
+}
+
+/* bootstrap-notify.css */
+.notifications {
+    filter: alpha(opacity=0.95);
+    opacity: 0.95;
+}
+
+.notifications > div > span {
+    margin-right: 15px;
+}
+
+.notifications > div > a.close {
+    margin-top: -2px;
+}
+
+.navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>li:hover {
+    border-radius: 14px;
+    background-color: #ff0;
+    color: green;
+}
+
+
+ 
+    
+
+  

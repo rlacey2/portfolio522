@@ -1,0 +1,144 @@
+ 
+	 
+ 
+	<div class=" fixed-nav-two">
+		<div class="col-sm-6 col-xs-hidden">
+	 	 
+		</div>	
+		<div class="col-sm-2 col-xs-4">
+				<button type="button" ng-click="resetShares()" style="margin-top:7px" popover-placement="right"  popover-trigger="mouseenter"
+			   popover-title="Selling Cost Difference" popover-enable="true"
+			   uib-popover="Difference between batch sale and per transaction sale" > 
+				Reset Shares</button> 
+		</div>	
+		
+		<div class="col-sm-2 col-xs-4">
+				<button type="button" ng-click="saveShares()" style="margin-top:7px">Save Shares</button> 
+		</div>		
+
+		<div class="col-sm-2 col-xs-4">
+			<button type="button" class="btn btn-info " ng-click="requeryShares(formData._id)" style="margin-top:3px">
+				<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+			</button> 
+		</div>		
+ 	</div>
+ 
+	<div class="row viewContent">
+		<div class="col-sm-4 col-xs-12">
+		_id =  {{formData._id}}
+		</div>
+	</div>
+	
+	<br><br>
+ 
+	<div class="row" > 
+			<div class="col-md-1 col-xs-3">
+				  <!-- spacing-->
+			</div>	
+			<div class="col-md-1 col-xs-3">
+			   ts#
+			</div>
+			<div class="col-md-1 col-xs-3">
+			   Exchange
+			</div>	
+			<div class="col-md-1 col-xs-3">
+				Quantity
+			</div>
+			<div class="col-md-1 col-xs-3">
+				Cost
+			</div>		
+			<div class="col-md-1 col-xs-3">
+				PPS
+			</div>	
+			<div class="col-md-1 col-xs-3"> 
+                CPPS
+			</div>
+			<div class="col-sm-2">
+				 nowValue
+			</div>				
+			<div class="col-md-1 col-xs-3">
+				% gain
+			</div>	
+			<div class="col-md-1 col-xs-3">
+				sell costs
+			</div>				
+	</div>
+ 
+</div>
+</div>
+ 	
+ 
+ <div  class=""   ng-repeat="(stockSymbol, stockData) in formData.stocks" >
+    <h3>{{stockSymbol}}</h3>   <!--outer ng-repeat to iterate across all shares by symbol for the stock -->
+	<!--
+	  All the data relating to a single stock is now accessed via stockData, process the held array for individual lines
+	-->
+	<div class="row"   ng-repeat="oneRecord in stockData.held"> <!-- inner ng-repeat, each line withing a symbol/stock -->
+			<div class="col-md-1 col-xs-3">
+				  <!-- spacing-->
+			</div>	
+			<div class="col-md-1 col-xs-3">
+			   {{oneRecord.ts}}
+			</div>
+			<div class="col-md-1 col-xs-3">
+			   {{oneRecord.ex}}
+			</div>	
+			<div class="col-md-1 col-xs-3">
+				{{oneRecord.number}}
+			</div>
+			<div class="col-md-1 col-xs-3">
+				{{oneRecord.cost}}
+			</div>		
+			<div class="col-md-1 col-xs-3">
+				{{oneRecord.pps}}
+			</div>	
+			<div class="col-md-1 col-xs-3"> 
+				
+				<input type="number" style="width:100%"      placeholder="cpps" ng-model="oneRecord.cpps"  step=".01" ng-min="0"   required />
+ 		
+			</div>
+			<div class="col-sm-2">
+				{{oneRecord.nowValue}} <span style="color:blue;font-size:.8em">= CLUE PER ROW<span>
+			</div>				
+			<div class="col-md-1 col-xs-3">
+				+/- gain
+			</div>	
+			<div class="col-md-1 col-xs-3">
+				sell costs
+			</div>				
+	</div>
+
+	<div class="row stockTotalRow"> 
+		<div class="col-xs-12">
+			<br>
+			<span style="color:blue;font-size:1.25em">{{stockSymbol}} </span>  Total Quantity =  <span style="color:blue;font-size:1.25em">{{stockData.totalQuantity}} </span>      -  You need to calculate the Total value of this stock and all stocks overall total value.
+		 </div>
+	</div>
+ </div>
+ 
+ 	<div class="row overallTotalRow"> 
+		<div class="col-xs-12">
+			<br> <br> <br>
+			You could display the total value of all holdings here, if it has been calculated, of course it can be put elsewhere on the view.
+ 		 </div>
+	</div>
+ 
+ 
+</div>
+</div>
+ 	
+ 
+ 	<div class="row overallTotalRow"> 
+		<div class="col-xs-12">
+			<br> <br> <br>
+			In your application, the updating of a cpps price per row or a value to apply to all of one stock should cause an update of presented nowValue either automatically or by enabling an update button.
+ 		</div>
+	</div> 
+ 
+ 
+  	<div class="row overallTotalRow"> 
+		<div class="col-xs-12">
+			<br> <br> <br>
+			Views not optimised for small devices, this is a separate styling issue.
+  		</div>
+	</div> 
